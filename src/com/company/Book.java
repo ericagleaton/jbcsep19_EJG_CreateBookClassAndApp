@@ -1,9 +1,12 @@
 package com.company;
 
+import java.util.Scanner;
+
 public class Book {
     private  String bookTitle, author, description;
     private double price;
     private boolean isInStock;
+    Scanner scanner = new Scanner(System.in);
 
 
     // Constructor runs when the keyword 'new' is encountered
@@ -20,9 +23,18 @@ public class Book {
     }
 
     public String getDisplayText(){
-        return "Author name: " + author + " Title: " + bookTitle + "Description: " + description;
+        return "Author name: " + author + " Title: " + bookTitle + " Description: " + description;
+    }
+
+
+    public Double getBookOrder(){
+        System.out.println("How many " + bookTitle + " books at the price of " + price +  " do you want?");
+        int num = scanner.nextInt();
+
+        return (price * num);
     }
 /*
+
     public String displayMessage(){
         return sender + " says " + greeting;
     }
